@@ -32,8 +32,8 @@ def ApiOverview(request):
 class ItemListView(ListAPIView):
     queryset = Item.objects.all().order_by('time')
     serializer_class = ItemSerializer
-    #filter_backends = [django_filters.rest_framework.DjangoFilterBackend]
-    #filterset_class = ItemFilter
+    filter_backends = [django_filters.rest_framework.DjangoFilterBackend]
+    filterset_class = ItemFilter
     #ordering = ['time']
 
 class create(CreateAPIView):

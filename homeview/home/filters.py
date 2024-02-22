@@ -11,9 +11,17 @@ class SearchFilter(django_filters.FilterSet):
         model = User
         fields = ['username']
 
+'''
 class ItemFilter(django_filters.FilterSet):
     time = django_filters.CharFilter(field_name='time')
 
     class Meta:
         model = Item
         fields = ['time']
+'''
+class ItemFilter(django_filters.FilterSet):
+    posts = django_filters.CharFilter(field_name='name')
+
+    class Meta:
+        model = Item
+        fields = ['name']
